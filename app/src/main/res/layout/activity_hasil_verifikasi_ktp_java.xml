@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.deni.kameraktp.HasilVerifikasiKtpJavaActivity" />
+
+        <variable
+            name="activity_hasil_verifikasi_ktp_java"
+            type="HasilVerifikasiKtpJavaActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HasilVerifikasiKtpJavaActivity"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/iv_hasil_capture_ktp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_ulangi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retake_foto"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_blue_dark"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_hasil_capture_ktp"
+            android:onClick="ulangi"/>
+
+        <TextView
+            android:id="@+id/tv_hv_ktp_pastikan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/make_sure_id_card"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/round"
+            android:backgroundTint="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ulangi"
+            />
+
+        <RadioGroup
+            android:id="@+id/rg_hv_ktp_jenis_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/til_hv_ktp_nama_ibu"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rb_hv_ktp_wni"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ktp_wni"/>
+            <RadioButton
+                android:id="@+id/rb_hv_ktp_wna"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/passport_foreign"/>
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_hv_ktp_nama_ibu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_konfirmasi_verifikasi_ktp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_hv_ktp_nama_ibu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mother_name"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_konfirmasi_verifikasi_ktp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/round"
+            android:layout_margin="5dp"
+            android:text="@string/confirmation"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

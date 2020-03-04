@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.deni.kameraktp.VerifikasiFotoKtpJavaActivity" />
+
+        <variable
+            name="activity_verifikasi_foto_ktp_java"
+            type="VerifikasiFotoKtpJavaActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".VerifikasiFotoKtpJavaActivity">
+
+        <ImageView
+            android:id="@+id/iv_vk_ktp_hasil_capture"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:layout_margin="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_gunakan_ktp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btn_ulangi_ktp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/round"
+            android:layout_margin="5dp"
+            android:text="@string/use"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btn_ulangi_ktp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/round"
+            android:backgroundTint="@android:color/white"
+            android:layout_margin="5dp"
+            android:text="@string/retake"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Camera ID</string>
+    <string name="verification_id_card">ID Card Verification</string>
+    <string name="permission_granted">Permission Granted</string>
+    <string name="permission_denied">Permission Denied</string>
+    <string name="complete_data">Complete your data</string>
+    <string name="process_few_minutes">The process only takes a few minutes</string>
+    <string name="prepare_id_card">Please prepare your KTP for citizens and passports for foreigners / foreigners</string>
+    <string name="start">Start</string>
+    <string name="flash_not_available">Flash Not Avaiable</string>
+    <string name="time_out_waiting_camera">Time Out waiting to lock camera opening .</string>
+    <string name="interupted_camera_opening">Interupted while trying to lock camera opening .</string>
+    <string name="interupted_camera_clossing">Interupted while trying to lock camera clossing.</string>
+    <string name="device_not_support">Device not Supported</string>
+    <string name="error_not_granted">ERROR : Camera permision not grandted</string>
+    <string name="failed">failed</string>
+    <string name="please_clear_id">Please take a photo of your ID card and make sure the information inside can be read clearly</string>
+    <string name="use">Use</string>
+    <string name="retake">Retake</string>
+    <string name="retake_foto">Retake Photo</string>
+    <string name="make_sure_id_card">Make sure the type of ID card has never been registered</string>
+    <string name="ktp_wni">Citizen ID Card</string>
+    <string name="passport_foreign">Passport (Foreign)</string>
+    <string name="mother_name">Biological Mother Name</string>
+    <string name="confirmation">Confirmation</string>
+</resources>

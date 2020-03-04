@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Kamera KTP</string>
+    <string name="verification_id_card">Verifikasi KTP</string>
+    <string name="permission_granted">Izin Diterima</string>
+    <string name="permission_denied">Izin Ditolak</string>
+    <string name="complete_data">Lengkapi data data anda</string>
+    <string name="process_few_minutes">Proses hanya membutuhkan waktu beberapa menit</string>
+    <string name="prepare_id_card">Mohon siapkan KTP anda bagi WNI dan Passport bagi WNA / Foreigner</string>
+    <string name="start">Mulai</string>
+    <string name="flash_not_available">Flash Tidak Tersedia</string>
+    <string name="time_out_waiting_camera">Waktu habis ketika menunggu membuka kamera</string>
+    <string name="interupted_camera_opening">Terganggu ketika membuka Kamera.</string>
+    <string name="interupted_camera_clossing">Terganggu ketika menutup Kamera.</string>
+    <string name="device_not_support">Handphone tidak mendukung aksi ini</string>
+    <string name="error_not_granted">ERROR : tidak mendapat izin ke kamera</string>
+    <string name="failed">Gagal</string>
+    <string name="please_clear_id">Mohon Foto Kartu identitas anda dan pastikan informasi didalamnya dapat terbaca dengan jelas</string>
+    <string name="use">Gunakan</string>
+    <string name="retake">Ulangi</string>
+    <string name="retake_foto">Ulangi Foto</string>
+    <string name="make_sure_id_card">Pastikan jenis Kartu Identitas Belum Pernah Terdaftar</string>
+    <string name="ktp_wni">KTP (WNI)</string>
+    <string name="passport_foreign">Passport (Foreign)</string>
+    <string name="mother_name">Nama Ibu Kandung</string>
+    <string name="confirmation">Konfirmasi</string>
+</resources>
