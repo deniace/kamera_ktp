@@ -54,6 +54,11 @@ import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Created by Deni Supriyatna
+ */
+
+
 public class CameraVerifikasiKtpJavaActivity extends AppCompatActivity {
 
     //3

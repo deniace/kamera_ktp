@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.deni.kameraktp.databinding.ActivityHasilVerifikasiKtpJavaBinding;
 
+/**
+ * Created by Deni Supriyatna
+ */
 
 public class HasilVerifikasiKtpJavaActivity extends AppCompatActivity {
 

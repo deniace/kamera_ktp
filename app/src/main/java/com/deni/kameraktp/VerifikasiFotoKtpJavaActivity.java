@@ -11,6 +11,10 @@ import android.view.View;
 
 import com.deni.kameraktp.databinding.ActivityVerifikasiFotoKtpJavaBinding;
 
+/**
+ * Created by Deni Supriyatna
+ */
+
 public class VerifikasiFotoKtpJavaActivity extends AppCompatActivity {
 
     //4

@@ -15,6 +15,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+/**
+ * Created by Deni Supriyatna
+ */
+
 public class InfoVerifikasiKtpActivity extends AppCompatActivity {
     //2
     Button btnMulai;
