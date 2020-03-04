@@ -7,9 +7,13 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.SparseArray;
 import android.view.View;
 
 import com.deni.kameraktp.databinding.ActivityVerifikasiFotoKtpJavaBinding;
+import com.google.android.gms.vision.Frame;
+import com.google.android.gms.vision.text.TextBlock;
+import com.google.android.gms.vision.text.TextRecognizer;
 
 /**
  * Created by Deni Supriyatna
@@ -22,6 +26,9 @@ public class VerifikasiFotoKtpJavaActivity extends AppCompatActivity {
     private final String ktp_bitmap = "KTPBITMAP";
     private Bitmap bitmapKtp;
     private byte[] byteArray;
+    private TextRecognizer textRecognizer;
+    private Frame frame;
+    private String textKtp = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,18 @@ public class VerifikasiFotoKtpJavaActivity extends AppCompatActivity {
         }else{
             binding.ivVkKtpHasilCapture.setImageResource(R.drawable.camera_circle);
         }
+        textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
+        frame = new Frame.Builder()
+                        .setBitmap(bitmapKtp)
+                        .build();
+        SparseArray<TextBlock> textBlockSparseArray = textRecognizer.detect(frame);
+
+        for(int i = 0; i < textBlockSparseArray.size(); i++){
+            TextBlock textBlock = textBlockSparseArray.get(textBlockSparseArray.keyAt(i));
+            textKtp += textBlock.getValue() +"\n";
+        }
+        binding.tvTextKtp.setText(textKtp);
+
     }
 
     View.OnClickListener kembali = new View.OnClickListener() {
