@@ -11,7 +11,6 @@ import android.widget.Button;
  * Created by Deni Supriyatna
  */
 
-
 public class MainActivity extends AppCompatActivity {
 
     // 1
