@@ -55,6 +55,11 @@ dependencies {
     // vision
     implementation 'com.google.android.gms:play-services-vision:19.0.0'
 
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+//    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+
 //    // ViewModel
 //    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 //    // LiveData

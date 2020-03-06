@@ -38,6 +38,7 @@ import android.util.Size;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -110,6 +111,8 @@ public class CameraVerifikasiKtpJavaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_camera_verifikasi_ktp_java);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+        getActionBar().hide();
         hasFlash = getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
 
         mTextureView = (TextureView) findViewById(R.id.tv_camera_ktp_java);
@@ -188,9 +191,9 @@ public class CameraVerifikasiKtpJavaActivity extends AppCompatActivity {
 
     // crop gambar yang di dapat dari texture view menjadi ukuran yang sesuai
     private Bitmap cropBitmap(Bitmap bitmap) {
-        int height = bitmap.getHeight() / 3;
         int h = binding.ivCameraLayerKtpJava.getMeasuredHeight();
         int w = binding.ivCameraLayerKtpJava.getMeasuredWidth();
+        int height = (bitmap.getHeight() - h) / 2;
         Bitmap cropBitmap = null;
         cropBitmap = Bitmap.createBitmap(bitmap, 0, height, w, h);
         return cropBitmap;

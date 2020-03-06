@@ -8,10 +8,13 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.deni.kameraktp.databinding.ActivityHasilVerifikasiKtpJavaBinding;
+
+import java.util.Arrays;
 
 /**
  * Created by Deni Supriyatna
@@ -21,9 +24,11 @@ public class HasilVerifikasiKtpJavaActivity extends AppCompatActivity {
 
     //5
     private final String ktp_bitmap = "KTPBITMAP";
+    private final String ktp_text = "KTPTEXT";
     ActivityHasilVerifikasiKtpJavaBinding binding;
     private Bitmap bitmapKtp;
     private byte[] byteArray;
+    private String [] ktpStringArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,9 @@ public class HasilVerifikasiKtpJavaActivity extends AppCompatActivity {
 
         if(getIntent().hasExtra(ktp_bitmap)){
             byteArray = getIntent().getByteArrayExtra(ktp_bitmap);
+            ktpStringArray = new String[getIntent().getStringArrayExtra(ktp_text).length];
+            ktpStringArray = getIntent().getStringArrayExtra(ktp_text);
+            Log.d("array", Arrays.toString(ktpStringArray));
             // mengkonversi data bitearray menjadi bitmap/gambar
             bitmapKtp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
             // menampilkan gambar ke imageView
@@ -62,13 +70,18 @@ public class HasilVerifikasiKtpJavaActivity extends AppCompatActivity {
         return valid;
     }
 
+    // fungsi untuk mengembalikan error pada layout menjadi tidak erro
+    private void nullError(){
+        binding.rbHvKtpWna.setError(null);
+        binding.rbHvKtpWni.setError(null);
+        binding.tilHvKtpNamaIbu.setErrorEnabled(false);
+        binding.tilHvKtpNamaIbu.setError(null);
+    }
+
     View.OnClickListener konfirmasi = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            binding.rbHvKtpWna.setError(null);
-            binding.rbHvKtpWni.setError(null);
-            binding.tilHvKtpNamaIbu.setErrorEnabled(false);
-            binding.tilHvKtpNamaIbu.setError(null);
+            nullError();
             if(isDataValid()){
                 Toast.makeText(HasilVerifikasiKtpJavaActivity.this, "oke", Toast.LENGTH_SHORT).show();
             }else{
