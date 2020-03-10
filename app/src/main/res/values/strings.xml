@@ -23,4 +23,7 @@
     <string name="passport_foreign">Passport (Foreign)</string>
     <string name="mother_name">Biological Mother Name</string>
     <string name="confirmation">Confirmation</string>
+    <string name="pick_one">Pick One</string>
+    <string name="mother_name_must_filled">Mother name must be filled</string>
+    <string name="driving_license">Driving License</string>
 </resources>

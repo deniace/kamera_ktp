@@ -10,10 +10,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Deni Supriyatna on 05/03/2020.
  * Email : denisupriyatna01@gmail.com
  */
-public class NetworkClient {
+public class RetrofitSingleton {
 
-    private static final String BASE_URL = "";
-    private static Retrofit retrofit;
+    private static final String BASE_URL = "http://192.168.1.107/appnews/";
+    private static Retrofit retrofit = null;
 
 
     public static Retrofit getRetrofitClient(Context context){

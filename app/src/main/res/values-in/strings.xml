@@ -23,4 +23,7 @@
     <string name="passport_foreign">Passport (Foreign)</string>
     <string name="mother_name">Nama Ibu Kandung</string>
     <string name="confirmation">Konfirmasi</string>
+    <string name="pick_one">Pilih Salah Satu</string>
+    <string name="mother_name_must_filled">Nama Ibu Harus diisi</string>
+    <string name="driving_license">SIM</string>
 </resources>

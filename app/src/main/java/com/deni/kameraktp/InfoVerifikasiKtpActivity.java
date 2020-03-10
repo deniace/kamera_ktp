@@ -24,6 +24,8 @@ public class InfoVerifikasiKtpActivity extends AppCompatActivity {
     Button btnMulai;
     Context context = InfoVerifikasiKtpActivity.this;
     int requestCode = 100;
+    int requestCodeStorage = 10;
+    String requestCodeString = "A";
 
 
     @Override
@@ -37,12 +39,13 @@ public class InfoVerifikasiKtpActivity extends AppCompatActivity {
     View.OnClickListener btnOpenCamera = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if(ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+            if(ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED &&
+                    ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
 //                openCamera();
                 Intent intent = new Intent(InfoVerifikasiKtpActivity.this, CameraVerifikasiKtpJavaActivity.class);
                 startActivity(intent);
             }else {
-                ActivityCompat.requestPermissions(InfoVerifikasiKtpActivity.this, new String[]{Manifest.permission.CAMERA}, requestCode);
+                ActivityCompat.requestPermissions(InfoVerifikasiKtpActivity.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, requestCode);
             }
         }
     };

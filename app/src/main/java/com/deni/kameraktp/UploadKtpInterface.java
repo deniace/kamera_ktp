@@ -14,6 +14,6 @@ import retrofit2.http.Part;
  */
 public interface UploadKtpInterface {
     @Multipart
-    @POST("/")
+    @POST("api/verifikasi_ktp")
     Call<ResponseBody> uploadKtp(@Part MultipartBody.Part file, @Part("name")RequestBody requestBody);
 }

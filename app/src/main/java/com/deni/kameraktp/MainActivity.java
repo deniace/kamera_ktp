@@ -14,13 +14,15 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     // 1
-    Button btnVerifikasi, btnTextureTest;
+    Button btnVerifikasi, btnA;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnVerifikasi = findViewById(R.id.btn_verifikasi);
         btnVerifikasi.setOnClickListener(btnVerifikasiClik);
+        btnA = findViewById(R.id.btn_ke_a);
+        btnA.setOnClickListener(clickKeA);
     }
 
     View.OnClickListener btnVerifikasiClik = new View.OnClickListener() {
@@ -31,4 +33,11 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    View.OnClickListener clickKeA = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(MainActivity.this, CobaPostRetrofitActivity.class);
+            startActivity(i);
+        }
+    };
 }

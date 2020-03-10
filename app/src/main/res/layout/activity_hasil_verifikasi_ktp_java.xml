@@ -73,13 +73,22 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:maxLines="2"
                 android:text="@string/ktp_wni"/>
             <RadioButton
                 android:id="@+id/rb_hv_ktp_wna"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:maxLines="2"
                 android:text="@string/passport_foreign"/>
+            <RadioButton
+                android:id="@+id/rb_hv_sim_wni"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:text="@string/driving_license"/>
         </RadioGroup>
 
         <com.google.android.material.textfield.TextInputLayout
