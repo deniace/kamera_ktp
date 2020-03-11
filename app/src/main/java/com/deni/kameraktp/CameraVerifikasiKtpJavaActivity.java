@@ -33,6 +33,7 @@ import android.media.ImageReader;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.util.Base64;
 import android.util.Log;
 import android.util.Size;
 import android.view.Surface;
@@ -100,6 +101,7 @@ public class CameraVerifikasiKtpJavaActivity extends AppCompatActivity {
 
     //buat intent extra
     private final String ktp_bitmap = "KTPBITMAP";
+    private final String ktp_base64 = "KTPBASE64";
 
     // apakah ada flash
     private boolean hasFlash = false;
@@ -143,11 +145,14 @@ public class CameraVerifikasiKtpJavaActivity extends AppCompatActivity {
         public void onClick(View v) {
             Bitmap bitmap = cropBitmap(texture2Bitmap());
             ByteArrayOutputStream bs = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, bs);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bs);
             byte[] ba = bs.toByteArray();
+            String encoded_64 = Base64.encodeToString(ba, Base64.DEFAULT);
+//            Log.d("image bit array", "onClick: "+encoded_64);
 
             Intent intent = new Intent(CameraVerifikasiKtpJavaActivity.this, VerifikasiFotoKtpJavaActivity.class);
             intent.putExtra(ktp_bitmap, ba);
+            intent.putExtra(ktp_base64, encoded_64);
             startActivity(intent);
         }
     };

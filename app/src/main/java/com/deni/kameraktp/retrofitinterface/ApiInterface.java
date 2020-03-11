@@ -1,4 +1,4 @@
-package com.deni.kameraktp;
+package com.deni.kameraktp.retrofitinterface;
 
 import com.deni.kameraktp.model.MetaData;
 

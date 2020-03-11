@@ -25,12 +25,14 @@ public class VerifikasiFotoKtpJavaActivity extends AppCompatActivity {
     ActivityVerifikasiFotoKtpJavaBinding binding;
     private final String ktp_bitmap = "KTPBITMAP";
     private final String ktp_text = "KTPTEXT";
+    private final String ktp_base64 = "KTPBASE64";
     private Bitmap bitmapKtp;
     private byte[] byteArray;
     private TextRecognizer textRecognizer;
     private Frame frame;
     private String textKtp = "";
     private String [] ktpStringArray = null;
+    private String ktpBase64String;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class VerifikasiFotoKtpJavaActivity extends AppCompatActivity {
         if(getIntent().hasExtra(ktp_bitmap)){
 //            mengambil data dari intent extra
             byteArray = getIntent().getByteArrayExtra(ktp_bitmap);
+            ktpBase64String = getIntent().getStringExtra(ktp_base64);
             // mengkonversi data bitearray menjadi bitmap/gambar
             bitmapKtp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
             // menampilkan gambar ke imageView
@@ -57,7 +60,8 @@ public class VerifikasiFotoKtpJavaActivity extends AppCompatActivity {
                         .build();
         SparseArray<TextBlock> textBlockSparseArray = textRecognizer.detect(frame);
 
-        ktpStringArray = new String[textBlockSparseArray.size()];
+//        ktpStringArray = new String[textBlockSparseArray.size()];
+        ktpStringArray = new String[15];
         for(int i = 0; i < textBlockSparseArray.size(); i++){
             TextBlock textBlock = textBlockSparseArray.get(textBlockSparseArray.keyAt(i));
             textKtp += textBlock.getValue() +" \n";
@@ -65,20 +69,6 @@ public class VerifikasiFotoKtpJavaActivity extends AppCompatActivity {
         }
         // ini untuk scroll view menampilkan semua text
         binding.tvTextKtp.setText(textKtp);
-
-        // ini buat text input edit text menampilkan nik ktp
-//        TextBlock textBlock1 = textBlockSparseArray.get(textBlockSparseArray.keyAt(2));
-//        binding.tietNikKtp.setText(textBlock1.getValue());
-
-//        String nikKtp = "";
-//        for (int i = 0; i <= 3 ; i++){
-//            TextBlock textBlock = textBlockSparseArray.get(textBlockSparseArray.keyAt(i));
-//            String tb = textBlock.getValue();
-//            if(TextUtils.isDigitsOnly(tb)){
-//                nikKtp = tb;
-//            }
-//        }
-//        binding.tietNikKtp.setText(nikKtp);
 
     }
 
@@ -98,6 +88,7 @@ public class VerifikasiFotoKtpJavaActivity extends AppCompatActivity {
             Intent intent = new Intent(VerifikasiFotoKtpJavaActivity.this, HasilVerifikasiKtpJavaActivity.class);
             intent.putExtra(ktp_bitmap, byteArray);
             intent.putExtra(ktp_text, ktpStringArray);
+            intent.putExtra(ktp_base64, ktpBase64String);
             startActivity(intent);
         }
     };

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.deni.kameraktp.model.MetaData;
+import com.deni.kameraktp.retrofitinterface.ApiInterface;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
