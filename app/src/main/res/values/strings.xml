@@ -26,4 +26,7 @@
     <string name="pick_one">Pick One</string>
     <string name="mother_name_must_filled">Mother name must be filled</string>
     <string name="driving_license">Driving License</string>
+    <string name="hilih_kintil">Hilih Kintil</string>
+    <string name="input_hilih">Input Hilih</string>
+    <string name="output_hilih">Output Hilih</string>
 </resources>

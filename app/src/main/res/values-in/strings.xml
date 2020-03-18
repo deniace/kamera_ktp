@@ -26,4 +26,7 @@
     <string name="pick_one">Pilih Salah Satu</string>
     <string name="mother_name_must_filled">Nama Ibu Harus diisi</string>
     <string name="driving_license">SIM</string>
+    <string name="hilih_kintil">Hilih Kintil</string>
+    <string name="input_hilih">Masukan Hilih</string>
+    <string name="output_hilih">Hasil Hilih</string>
 </resources>

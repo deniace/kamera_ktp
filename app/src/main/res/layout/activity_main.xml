@@ -36,6 +36,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_verifikasi" />
 
+    <Button
+        android:id="@+id/btn_ke_hilih_kintil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hilih_kintil"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/round"
+        android:layout_margin="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_ke_a" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
